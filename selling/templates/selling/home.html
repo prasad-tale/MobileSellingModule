@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        #image_post{
+            width: 150px;
+            height: 200px;
+
+        }
+
+        .link_post{
+            width: 400px;
+        }
+    </style>
+{% endblock css %}
+
+
+{% block body %}
+
+{% if messages %}
+{% for message in messages %}
+<div class = "container" style = "width: 70rem;">
+    <div class = "alert alert-success">
+        {{message}}
+    </div>
+
+</div>
+{% endfor %}
+{% endif %}
+
+{% for post in posts %}
+{% if post.status == "Approved" %}    
+<div class="container my-4" style="width: 400px;" id = "{{post.id}}">
+    <a class="link_post" href="{% url 'view' post.id %}">
+        <div class = "card text-center">
+            <h3 class = "card-title" style="text-align: center; color:black">{{post.name_of_phone}}</h3>
+        
+            <div class = "card-body" role="cell" >
+                <div class = "card-img-center">
+                    {% if post.image1 %}
+                    <img src="{{post.image1.url}}" id = "image_post"><br>
+                    {% endif %}
+                </div>
+            
+                <button  class = "btn btn-primary" href="{% url 'view' post.id %}" style="position: -ms-page;"> View Details </button>
+                
+            </div>
+        </div>
+    </a>
+</div>
+{% endif %}
+{% endfor %}
+
+
+{% endblock body %}

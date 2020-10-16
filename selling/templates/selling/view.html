@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <style>
+        .body{
+            background-color: darkgray;
+        }
+
+        #post-img{
+            width: 150px;
+            height: 200px;
+
+        }
+
+    </style>
+{% endblock css %}
+
+{% block body %}
+
+<div class = "MultiGrid-container">
+    <div class="MultiGrid-item">
+        <img alt style="width: auto; height: 400px" src="{{post.image1.url}}">
+    </div>
+
+    <div class = "card">
+        <div class = "MultiGrid-item">
+            <h2>{{post.name_of_phone}}</h2>
+            <hr>
+            
+            <li>Grade:{{post.about}}</li>
+            <li>RAM: {{post.ram}} GB</li>
+            <li>Storage: {{post.storage}} GB</li>
+            <li>Color: {{post.color}}</li><br>
+            <button class= "btn btn-primary" value="Buy" href="">Buy</button>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}
+
+

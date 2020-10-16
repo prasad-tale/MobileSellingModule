@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="card" style="width: 25rem;" >
+       
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: left;"><label> Sell Here!! </label></h5>
+              <hr style="background-color: black;">
+              <h5 class="card-text" style="font-size: small; text-align:left" >Identity info:</h5>
+              <form method="POST" action="" enctype="multipart/form-data">
+                    {% csrf_token %}
+                       <div class= "form-group">
+                            <label> Enter your full name:</label><br>
+                            <div class="input-group-append">
+                                {{form.name_of_customer}}
+                            </div>
+                        </div>
+
+                        <div class= "form-group">
+                            <label> Enter your Email</label><br>
+                            <div class="input-group-append">
+                                {{form.email}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label> Enter your Phone number:</label><br>
+                            <div class="input-group-append">
+                                {{form.contact_number}}
+                            </div>
+                        </div>
+                            <hr style="background-color: black;">
+                            <h5 class="card-text" style="font-size: small; text-align:left" >Mobile info:</h5>
+
+                        
+                        <div class= "form-group">
+                            <label>Name of Model & Brand:</label><br>
+                            <div class="input-group-append">
+                                {{form.name_of_phone}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label> RAM(in GB):</label><br>
+                            <div class="input-group-append">
+                                {{form.ram}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label>Storage(internal):</label><br>
+                            <div class="input-group-append">
+                                {{form.storage}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label>Color:</label><br>
+                            <div class="input-group-append">
+                                {{form.color}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label>Describe condition(Eg: In Warranty period):</label><br>
+                            <div class="input-group-append">
+                                {{form.about}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label>Upload a photograph of model:</label><br>
+                            <div class="input-group-append">
+                                {{form.image1}}
+                            </div>
+                        </div>
+                        <div class= "form-group">
+                            <label>Upload one more photograph with different angle</label><br>
+                            <div class="input-group-append">
+                                {{form.image2}}
+                            </div>
+                        </div>
+                        <hr style="background-color: black;">
+                        <h5 class="card-text" style="font-size: small; text-align:left" >Pricing:</h5>
+                        <div class= "form-group">
+                            <label>Expected Price:</label><br>
+                            <div class="input-group-append">
+                                {{form.price}}
+                            </div>
+                        </div>
+
+                    <input class="btn btn-primary" type="submit" value="Confirm and Send for Approval">
+              </form>
+             
+            
+            </div>
+    </div>
+</div> 
+{% endblock body %}
